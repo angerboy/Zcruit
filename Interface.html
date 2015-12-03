@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap 3 Fixed Layout Example</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body{
+        padding-top: 70px;
+    }
+</style>
+</head>
+<body>
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Zcruit Interface v1.0</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Zcruit</h1>
+        <p>Zcruit: Breaking down college recruiting with statistical models. Insert some great slogan here. Placeholder.</p>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <h2>Add a Player</h2>
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="name" class="form-control" id="inputName" placeholder="Name">
+            </div>
+            <div class="radio">
+                <p>Socioeconomic Status: </p>
+                <label><input type="radio" name="optradio">Low</label>
+                <label><input type="radio" name="optradio">Middle</label>
+                <label><input type="radio" name="optradio">High</label>
+                <label><input type="radio" name="optradio">Unknown</label>
+            </div>
+            <div class="radio">
+                <p>Number of Visits: </p>
+                <label><input type="radio" name="optradio">0</label>
+                <label><input type="radio" name="optradio">1</label>
+                <label><input type="radio" name="optradio">2</label>
+                <label><input type="radio" name="optradio">3+</label>
+            </div>
+            <div class="radio">
+                <p>Number of Overnight Visits: </p>
+                <label><input type="radio" name="optradio">0</label>
+                <label><input type="radio" name="optradio">1</label>
+                <label><input type="radio" name="optradio">2</label>
+                <label><input type="radio" name="optradio">3+</label>
+            </div>
+            <div class="radio">
+                <p>Power 5 Offer? </p>
+                <label><input type="radio" name="optradio">1st</label>
+                <label><input type="radio" name="optradio">2nd</label>
+                <label><input type="radio" name="optradio">3rd+</label>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <h2>Binaries</h2>
+            <div class="radio">
+                <p>Institutional Conncection? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+            <div class="radio">
+                <p>Legacy? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+            <div class="radio">
+                <p>Sibling? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+            <div class="radio">
+                <p>Past Prospect? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+            <div class="radio">
+                <p>Other Teammates? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+            <div class="radio">
+                <p>Attended Camp? </p>
+                <label><input type="radio" name="optradio">Yes</label>
+                <label><input type="radio" name="optradio">No</label>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <h2>Other Offers</h2>
+            <form role="form">
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Alabama</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Auburn</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Clemson</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Florida</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">FSU</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Georgia</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">LSU</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Miami (FL)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Michigan</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">MSU</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Ole Miss</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">UCLA</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Notre Dame</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">OSU</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Oklahoma</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Oregon</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Texas</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Washington</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">USC</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">South Carolina</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Baylor</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Vanderbilt</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Virginia</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Penn State</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Duke</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Maryland</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Iowa</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Nebraska</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Oklahoma State</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">TCU</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="">Minnesota</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <footer>
+                <p>&copy; Copyright 2016 Zcruit</p>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>                                     
