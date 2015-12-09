@@ -6,7 +6,16 @@ $(window).load(function() {
 /* Add player on click function */
 function calcProbs() {
 
-		// instantiate variables
+		// instantiate final variables
+		var status;
+		var connec;
+		var interest;
+		var earlyOffer;
+		var midOffer;
+		var highOffer;
+		var medOffer;
+
+		// instantiate intermediate variables
 		var sesStatus;
 
 		// retrieve groups of radio buttons 
