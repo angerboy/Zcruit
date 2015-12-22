@@ -27,8 +27,8 @@ function calcProbs() {
 		var wasPastProspect;
 		var otherTeammates;
 		var didAttendCamp;
-		var numTopOffers;
-		var numMidOffers;
+		var numTopOffers = 0;
+		var numMidOffers = 0;
 
 		// retrieve intermediate variable values
 		sesStatus = parseInt(retrieveValueFromRadiosWithName("ses"));
@@ -43,6 +43,18 @@ function calcProbs() {
 		otherTeammates = parseInt(retrieveValueFromRadiosWithName("otherteam"));
 		didAttendCamp = parseInt(retrieveValueFromRadiosWithName("camp"));
 
+		// Iterate through other offer checkboxes and increment appropriate variables
+		var checkBoxes = document.querySelectorAll("input[type=checkbox]");
+		for(var i = 0; i < checkBoxes.length; i++) {
+			if(checkBoxes[i].checked) {
+				if(checkBoxes[i].value=="top") {
+					numTopOffers++;
+				}
+				else if(checkBoxes[i].value="mid") {
+					numMidOffers++;
+				}
+			}
+		}
 }
 
 function retrieveValueFromRadiosWithName(name) {
