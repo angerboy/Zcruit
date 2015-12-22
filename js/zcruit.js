@@ -17,18 +17,40 @@ function calcProbs() {
 
 		// instantiate intermediate variables
 		var sesStatus;
+		var numVisits;
+		var numOverNightVisits;
+		var powerFiveOffer;
+		var parentEducationLevel;
+		var hasInstConnec;
+		var hasLegacy;
+		var hasSibling;
+		var wasPastProspect;
+		var otherTeammates;
+		var didAttendCamp;
+		var numTopOffers;
+		var numMidOffers;
 
-		// retrieve groups of radio buttons 
-		var sesRadios = document.getElementsByName("ses");
+		// retrieve intermediate variable values
+		sesStatus = parseInt(retrieveValueFromRadiosWithName("ses"));
+		numVisits = parseInt(retrieveValueFromRadiosWithName("numvisits"));
+		numOverNightVisits = parseInt(retrieveValueFromRadiosWithName("overvisits"));
+		powerFiveOffer = parseInt(retrieveValueFromRadiosWithName("power5"));
+		parentEducationLevel = parseInt(retrieveValueFromRadiosWithName("parenteduc"));
+		hasInstConnec = parseInt(retrieveValueFromRadiosWithName("instituteconnec"));
+		hasLegacy = parseInt(retrieveValueFromRadiosWithName("legacy"));
+		hasSibling = parseInt(retrieveValueFromRadiosWithName("sibling"));
+		wasPastProspect = parseInt(retrieveValueFromRadiosWithName("pastprospect"));
+		otherTeammates = parseInt(retrieveValueFromRadiosWithName("otherteam"));
+		didAttendCamp = parseInt(retrieveValueFromRadiosWithName("camp"));
 
-		// find checked values 
-		for(var i = 0, length = sesRadios.length; i < length; i++) {
-			if(sesRadios[i].checked) {
-				sesStatus = parseInt(sesRadios[i].value);
-				break;
-			}
+}
+
+function retrieveValueFromRadiosWithName(name) {
+	var radios = document.getElementsByName(name);
+	for(var i = 0, length = radios.length; i<length; i++) {
+		if(radios[i].checked) {
+			return radios[i].value;
 		}
-
-		console.log(sesStatus);
-
+	}
+	return "NO_VALUE_PROVIDED";
 }
