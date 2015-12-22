@@ -86,7 +86,7 @@ function resolveVariables() {
 		inputs.push(interest);
 
 		//earlyoffer
-		if(powerFiveOffer == 1 || powerFiveOffer == 2) {
+		if(powerFiveOffer == 0 || powerFiveOffer == 1) {
 			earlyOffer = 1;
 		}
 		else {
@@ -95,13 +95,14 @@ function resolveVariables() {
 		inputs.push(earlyOffer);
 
 		//midoffer
-		if(powerFiveOffer > 2 && powerFiveOffer < 8) {
+		/*if(powerFiveOffer > 1 && powerFiveOffer < 8) {
 			midOffer = 1;
 		}
 		else {
 			midOffer = 0;
 		}
 		inputs.push(midOffer);
+		*/
 
 		inputs.push(highOffer);
 		inputs.push(medOffer);
@@ -110,7 +111,19 @@ function resolveVariables() {
 }
 
 function calculateProb(inputs) {
-	console.log("yo");
+	// hard code coeffs - perhaps parse backend later
+	var B_0 = -2.965899;
+	var B_status = .9595554;
+	var B_connec = 1.181285;
+	var B_interest = 2.140839;
+	var B_earlyoffer = .7091033;
+	var B_highoffer = -.515487;
+	var B_medoffer = -.2805989;
+
+	var sum = -1 *( B_0 + (B_status*inputs[0]) + (B_connec*inputs[1]) + (B_interest*inputs[2]) + (B_earlyoffer*inputs[3]) + (B_highoffer*inputs[4]) + (B_medoffer*inputs[5]));
+
+	prob = (1 / (1 + Math.pow(Math.E, sum)));
+	console.log(prob);
 }
 
 function retrieveValueFromRadiosWithName(name) {
