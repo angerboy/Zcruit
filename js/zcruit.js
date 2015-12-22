@@ -4,7 +4,7 @@ $(window).load(function() {
 
 
 /* Add player on click function */
-function calcProbs() {
+function resolveVariables() {
 
 		// instantiate final variables
 		var status;
@@ -12,8 +12,8 @@ function calcProbs() {
 		var interest;
 		var earlyOffer;
 		var midOffer;
-		var highOffer;
-		var medOffer;
+		var highOffer = 0;
+		var medOffer = 0;
 
 		// instantiate intermediate variables
 		var sesStatus;
@@ -27,8 +27,6 @@ function calcProbs() {
 		var wasPastProspect;
 		var otherTeammates;
 		var didAttendCamp;
-		var numTopOffers = 0;
-		var numMidOffers = 0;
 
 		// retrieve intermediate variable values
 		sesStatus = parseInt(retrieveValueFromRadiosWithName("ses"));
@@ -48,13 +46,71 @@ function calcProbs() {
 		for(var i = 0; i < checkBoxes.length; i++) {
 			if(checkBoxes[i].checked) {
 				if(checkBoxes[i].value=="top") {
-					numTopOffers++;
+					highOffer++;
 				}
 				else if(checkBoxes[i].value="mid") {
-					numMidOffers++;
+					medOffer++;
 				}
 			}
 		}
+
+		var inputs = [];
+
+		// calculate final variables from intermediate variables and add to input array
+
+		//status
+		if((sesStatus == 1 || sesStatus == 2) || (parentEducationLevel == 1 || parentEducationLevel ==2)) {
+			status = 1;
+		}
+		else {
+			status = 0;
+		}
+		inputs.push(status);
+
+		//connec
+		if(Boolean(hasInstConnec || hasSibling || hasLegacy || otherTeammates || wasPastProspect)) {
+			connec = 1;
+		}
+		else {
+			connec = 0;
+		}
+		inputs.push(connec);
+
+		//interest
+		if(Boolean(didAttendCamp || numVisits || numOverNightVisits)) {
+			interest = 1;
+		}
+		else {
+			interest = 0;
+		}
+		inputs.push(interest);
+
+		//earlyoffer
+		if(powerFiveOffer == 1 || powerFiveOffer == 2) {
+			earlyOffer = 1;
+		}
+		else {
+			earlyOffer = 0;
+		}
+		inputs.push(earlyOffer);
+
+		//midoffer
+		if(powerFiveOffer > 2 && powerFiveOffer < 8) {
+			midOffer = 1;
+		}
+		else {
+			midOffer = 0;
+		}
+		inputs.push(midOffer);
+
+		inputs.push(highOffer);
+		inputs.push(medOffer);
+
+		calculateProb(inputs);
+}
+
+function calculateProb(inputs) {
+	console.log("yo");
 }
 
 function retrieveValueFromRadiosWithName(name) {
@@ -64,5 +120,5 @@ function retrieveValueFromRadiosWithName(name) {
 			return radios[i].value;
 		}
 	}
-	return "NO_VALUE_PROVIDED";
+	return "0";
 }
