@@ -124,6 +124,18 @@ function calculateProb(inputs) {
 
 	prob = (1 / (1 + Math.pow(Math.E, sum)));
 	console.log(prob);
+
+	// append result to table
+	var table = document.getElementById("resultsTable");
+	var row = table.insertRow(1);
+	var firstNameCell = row.insertCell(0);
+	var lastNameCell = row.insertCell(1);
+	var probCell = row.insertCell(2);
+
+	var nameInput = document.getElementById("inputName");
+	firstNameCell.innerHTML = nameInput.value;
+
+	probCell.innerHTML = prob;
 }
 
 function retrieveValueFromRadiosWithName(name) {
