@@ -30,16 +30,27 @@ function resolveVariables() {
 
 		// retrieve intermediate variable values
 		sesStatus = parseInt(retrieveValueFromRadiosWithName("ses"));
+		console.log("SES STATUS: " + sesStatus);
 		numVisits = parseInt(retrieveValueFromRadiosWithName("numvisits"));
+		console.log("NUM VISITS: " + numVisits);
 		numOverNightVisits = parseInt(retrieveValueFromRadiosWithName("overvisits"));
+		console.log("NUM OVER VISITS: " + numOverNightVisits);
 		powerFiveOffer = parseInt(retrieveValueFromRadiosWithName("power5"));
+		console.log("POWER 5 OFFER: " + powerFiveOffer);
 		parentEducationLevel = parseInt(retrieveValueFromRadiosWithName("parenteduc"));
+		console.log("PARENT EDUC: " + parentEducationLevel);
 		hasInstConnec = parseInt(retrieveValueFromRadiosWithName("instituteconnec"));
+		console.log("INSTITUTE CONNEC: " + hasInstConnec);
 		hasLegacy = parseInt(retrieveValueFromRadiosWithName("legacy"));
+		console.log("LEGACY: " + hasLegacy);
 		hasSibling = parseInt(retrieveValueFromRadiosWithName("sibling"));
+		console.log("HAS SIBLING: " + hasSibling);
 		wasPastProspect = parseInt(retrieveValueFromRadiosWithName("pastprospect"));
+		console.log("PAST PROSPECT: " + wasPastProspect);
 		otherTeammates = parseInt(retrieveValueFromRadiosWithName("otherteam"));
+		console.log("OTHER TEAMMATE: " + otherTeammates);
 		didAttendCamp = parseInt(retrieveValueFromRadiosWithName("camp"));
+		console.log("CAMP: " + didAttendCamp);
 
 		// Iterate through other offer checkboxes and increment appropriate variables
 		var checkBoxes = document.querySelectorAll("input[type=checkbox]");
@@ -53,6 +64,9 @@ function resolveVariables() {
 				}
 			}
 		}
+
+		console.log("HIGH OFFERS: " + highOffer);
+		console.log("MED OFFERS: " + medOffer);
 
 		var inputs = [];
 
