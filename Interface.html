@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bootstrap 3 Fixed Layout Example</title>
+<title>Zcruit</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/zcruit.js"></script>
 <style type="text/css">
     body{
         padding-top: 70px;
@@ -18,85 +19,99 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Zcruit Interface v1.0</a>
+            <a class="navbar-brand" href="#">Zcruit Interface v1.1</a>
         </div>
     </div>
 </nav>
 <div class="container">
-    <div class="jumbotron">
-        <h1>Zcruit</h1>
+    <div class="col-xs-2">
+        <h2>Zcruit</h2>
         <p>Zcruit: Breaking down college recruiting with statistical models. Insert some great slogan here. Placeholder.</p>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+                <button type="button" class="btn btn-default btn-lg" onclick="resolveVariables()">Add Player</button>
+            </div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
-            <h2>Add a Player</h2>
+        <div class="col-xs-3">
+            <h2>Player Info</h2>
             <div class="form-group">
                 <label for="inputName">Name</label>
                 <input type="name" class="form-control" id="inputName" placeholder="Name">
             </div>
             <div class="radio">
-                <p>Socioeconomic Status: </p>
+                <p><b>Socioeconomic Status</b></p>
                 <label><input type="radio" name="ses" value="0">Low</label>
-                <label><input type="radio" name="ses" value="1">Middle</label>
+                <label><input type="radio" name="ses" value="1">Mid</label>
                 <label><input type="radio" name="ses" value="2">High</label>
                 <label><input type="radio" name="ses" value="3">Unknown</label>
             </div>
             <div class="radio">
-                <p>Number of Visits: </p>
+                <p><b>Number of Visits</b></p>
                 <label><input type="radio" name="numvisits" value="0">0</label>
                 <label><input type="radio" name="numvisits" value="1">1</label>
                 <label><input type="radio" name="numvisits" value="2">2</label>
                 <label><input type="radio" name="numvisits" value="3">3+</label>
             </div>
             <div class="radio">
-                <p>Number of Overnight Visits: </p>
+                <p><b>Number of Overnight Visits</b></p>
                 <label><input type="radio" name="overvisits" value="0">0</label>
                 <label><input type="radio" name="overvisits" value="1">1</label>
                 <label><input type="radio" name="overvisits" value="2">2</label>
                 <label><input type="radio" name="overvisits" value="3">3+</label>
             </div>
             <div class="radio">
-                <p>Power 5 Offer? </p>
+                <p><b>Power 5 Offer </b></p>
                 <label><input type="radio" name="power5" value="0">1st</label>
                 <label><input type="radio" name="power5" value="1">2nd</label>
                 <label><input type="radio" name="power5" value="2">3rd+</label>
             </div>
+            <div class="radio">
+                <p><b>Parental Education </b></p>
+                <label><input type="radio" name="parenteduc" value="0">HS</label>
+                <label><input type="radio" name="parenteduc" value="1">Bachelors</label>
+                <label><input type="radio" name="parenteduc" value="2">Advanced</label>
+            </div>
+            
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-2">
             <h2>Binaries</h2>
             <div class="radio">
-                <p>Institutional Conncection? </p>
+                <p><b>Institutional Connection</b> </p>
                 <label><input type="radio" name="instituteconnec" value="0">Yes</label>
                 <label><input type="radio" name="instituteconnec" value="1">No</label>
             </div>
             <div class="radio">
-                <p>Legacy? </p>
+                <p><b>Legacy</b> </p>
                 <label><input type="radio" name="legacy" value="0">Yes</label>
                 <label><input type="radio" name="legacy" value="1">No</label>
             </div>
             <div class="radio">
-                <p>Sibling? </p>
+                <p><b>Sibling </b></p>
                 <label><input type="radio" name="sibling" value="0">Yes</label>
                 <label><input type="radio" name="sibling" value="1">No</label>
             </div>
             <div class="radio">
-                <p>Past Prospect? </p>
+                <p><b>Past Prospect </b></p>
                 <label><input type="radio" name="pastprospect" value="0">Yes</label>
                 <label><input type="radio" name="pastprospect" value="1">No</label>
             </div>
             <div class="radio">
-                <p>Other Teammates? </p>
+                <p><b>Other Teammates </b></p>
                 <label><input type="radio" name="otherteam" value="0">Yes</label>
                 <label><input type="radio" name="otherteam" value="1">No</label>
             </div>
             <div class="radio">
-                <p>Attended Camp? </p>
+                <p><b>Attended Camp </b></p>
                 <label><input type="radio" name="camp" value="0">Yes</label>
                 <label><input type="radio" name="camp" value="1">No</label>
             </div>
         </div>
-        <div class="col-xs-4">
-            <h2>Other Offers</h2>
+        <h2> &nbsp;Other Offers</h2>
+        <div class="col-xs-2">
+            
             <form role="form">
                 <div class="checkbox">
                   <label><input type="checkbox" value="top">Alabama</label>
@@ -146,7 +161,11 @@
                 <div class="checkbox">
                   <label><input type="checkbox" value="top">Oregon</label>
                 </div>
-                <div class="checkbox">
+                
+        </div>  <!-- closing first xs-2 -->
+
+        <div class="col-xs-2">
+            <div class="checkbox">
                   <label><input type="checkbox" value="top">Texas</label>
                 </div>
                 <div class="checkbox">
@@ -194,10 +213,48 @@
                 <div class="checkbox">
                   <label><input type="checkbox" value="mid">Minnesota</label>
                 </div>
+
             </form>
+    </div>
+        
+    <hr>
+    <div classs="row">
+        <div class="col-xs-12">
+            <div class="container">
+              <h2>Liklihood Table</h2>
+              <p>Your Added Players</p>            
+              <table class="table table-condensed" id="resultsTable">
+                <thead>
+                  <tr>
+                    <th>Firstname</th>
+                    <th></th>
+                    <th>Probability</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <!--
+                  <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>72</td>
+                  </tr>
+                  <tr>
+                    <td>Bill</td>
+                    <td>Moe</td>
+                    <td>35</td>
+                  </tr>
+                  <tr>
+                    <td>Clemens</td>
+                    <td>Dooley</td>
+                    <td>12</td>
+                  </tr>
+              -->
+                </tbody>
+              </table>
+            </div>
         </div>
     </div>
-    <hr>
+
     <div class="row">
         <div class="col-xs-12">
             <footer>
